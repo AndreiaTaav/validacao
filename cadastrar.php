@@ -30,8 +30,8 @@
         $camposValidados = false;
     }
     
-    $select= $_REQUEST["estado"];
-    if($select== -1){
+    $estado= $_REQUEST["estado"];
+    if($estado== -1){
         echo "Por favor , selecione uma opcao para o estado<br/>";
         $camposValidados = false;
 
