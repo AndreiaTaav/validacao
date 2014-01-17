@@ -11,6 +11,9 @@
     $nome = $_REQUEST["nome"];
     $estado = $_REQUEST["estado"];
     $observacoes = $_REQUEST["observacoes"];
+    $telefone = $_REQUEST["telefone"];
+    $cpf = $_REQUEST["cpf"];
+    
     
     $sexo = null;
     if(isset($_REQUEST["sexo"])){
@@ -36,7 +39,7 @@
         $camposValidados = false;
 
     }
-    
+    //TRIM serve para juntar todos os espacos vazios
     $nome = trim($nome);
     if(empty($nome)){
         echo "Preencha o nome no campo <br/>";
@@ -49,6 +52,28 @@
         $camposValidados = false;
     }
     
+     $telefone = trim ($telefone);
+    if(empty($telefone)){
+        echo "Preencha o telefone no campo ! <br/>";
+        $camposValidados = false;
+    }
+    //STRLEN SERVE PARA DIZER SE ER INVALIDO OU NAO O TAMANHO DE ACORDO COM NUMERO COLOCADO
+    else if(strlen($telefone) != 8){
+        echo "Tamanho inválido ! <br/>";
+        $camposValidados = false;        
+    }
+    
+    
+    $cpf = trim ($cpf);
+    if(empty($cpf)){
+        echo "Preencha o cpf no campo ! <br/>";
+        $camposValidados = false;
+    }
+    
+        else if(strlen($cpf) != 11){
+        echo "Tamanho inválido ! <br/>";
+        $camposValidados = false;        
+    }    
     if($camposValidados){
         $pessoa = array();
         $pessoa["nome"] = $nome;
