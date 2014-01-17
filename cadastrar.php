@@ -37,11 +37,13 @@
 
     }
     
+    $nome = trim($nome);
     if(empty($nome)){
         echo "Preencha o nome no campo <br/>";
         $camposValidados = false;
     }
     
+    $observacoes = trim($observacoes);
     if(empty($observacoes)){
         echo "Preencha as observacoes no campo <br/>";
         $camposValidados = false;
